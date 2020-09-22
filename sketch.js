@@ -1,13 +1,12 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var position = ball.position.x,ball.position.y;
+
 
 function preload()
 {
-	
+
 }
 
 function setup() {
@@ -29,9 +28,9 @@ function setup() {
 	box1 = new Box(1050,570,150,20);
 	box2 = new Box(975,500,20,150);
 	box3 = new Box(1125,500,20,150);
-	
+
 	Engine.run(engine);
-  
+
 	ground = Bodies.rectangle(width/2, height-35, width, 10 , {isStatic:true} );
 	ground.shapeColor=(0,255,0);
  	World.add(world, ground);
@@ -41,19 +40,19 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  
+
   drawSprites();
-  
+
   paperObject.display();
   box1.display();
   box2.display();
   box3.display();
 
-  keypressed();
+
 }
 
-function keypressed() {
+function keyPressed() {
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(paperObject.Body,paperObject.Body.position,{x:85,y:85})
+		Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:25,y:-25})
 	}
-}
+} 

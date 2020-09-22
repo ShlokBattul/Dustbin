@@ -1,7 +1,7 @@
 class Ball {
     constructor(x, y, width, height) {
       var options = {
-           isStatic : true,
+           isStatic : false,
           'restitution':0.8,
           'friction':0.3,
           'density':1.0
